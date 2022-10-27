@@ -11,6 +11,6 @@ View error in console
 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'toArrayLike')  
 at AuctionHousePdasClient.tradeState (AuctionHousePdasClient.ts:131:1)  
 at createListingBuilder (createListing.ts:332:1)  
-at AuctionHouseBuildersClient.list (AuctionHouseBuildersClient.ts:100:1)  
+at AuctionHouseBuildersClient.list (AuctionHouseBuildersClient.ts: 100:1)  
 at listItem (App.js:17:1)  
 
