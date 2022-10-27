@@ -4,7 +4,6 @@ import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 
 function App() {
   const auctionHouse = "Hvy8TQ6iuKmLQgWaEHBQksMMYAEH8aaPmD1pD2VMNToZ";
-
   const connection = new Connection(clusterApiUrl("mainnet-beta"));
   const metaplex = new Metaplex(connection);
 
@@ -12,17 +11,16 @@ function App() {
     const kinAuctionHouse = await metaplex.auctionHouse().findByAddress({
       address: new PublicKey(auctionHouse),
     });
-    console.log("Kin AuctionHouse:", kinAuctionHouse.creatorAddress.toString());
-    console.log("Kin auction house is:", kinAuctionHouse.address.toString());
+
     const listTransaction = metaplex
       .auctionHouse()
       .builders()
       .list({
-        auctionHouse: kinAuctionHouse, // Need to update so right AuctionHouse is used depending on currency being used
+        auctionHouse: kinAuctionHouse,
         mintAccount: new PublicKey(
           "6e6XzDLpyxRF1zBxnx686bY8cwyVpmmZRgNJCte1VWrE"
         ),
-        price: 15000000, // Need to update so user selects currency and amount
+        price: 15000000,
         tokens: 1,
         printReceipt: true,
       });
@@ -30,7 +28,8 @@ function App() {
 
   return (
     <div className="App">
-      <p>Hello Metaplex</p>
+      <p>Hello Metaplex!!!</p>
+      <p>Thank you for all that you do!!</p>
       <button onClick={listItem}>List NFT</button>
     </div>
   );
